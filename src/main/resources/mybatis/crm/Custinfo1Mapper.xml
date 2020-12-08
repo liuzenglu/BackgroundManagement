@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyrcb.hydp.modules.crm.mapper.Custinfo1Mapper">
+    
+    <resultMap type="Custinfo1" id="Custinfo1Result">
+        <result property="id"    column="id"    />
+        <result property="custNo"    column="cust_no"    />
+        <result property="custName"    column="cust_name"    />
+        <result property="certType"    column="cert_type"    />
+        <result property="certNo"    column="cert_no"    />
+        <result property="telNo"    column="tel_no"    />
+        <result property="address"    column="address"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <select id="selectCustInfoList" parameterType="Custinfo1" resultMap="Custinfo1Result">
+        select id, cust_no, cust_name, cert_type, cert_no, tel_no, address, create_by, update_by, create_time, update_time from crm_custinfo
+    </select>
+
+
+</mapper>
