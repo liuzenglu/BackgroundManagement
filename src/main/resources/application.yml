@@ -18,7 +18,7 @@ ruoyi:
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为8080
-  port: 8080
+  port: 8181
   servlet:
     # 应用的访问路径
     context-path: /
@@ -134,7 +134,7 @@ xss:
 # 代码生成
 gen: 
   # 作者
-  author: shenzulun
+  author: liuzenglu
   # 默认生成包路径 system 需改成自己的模块名称 如 system monitor tool
   packageName: com.hyrcb.hydp.modules.fxq
   # 自动去除表前缀，默认是true

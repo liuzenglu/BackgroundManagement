@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyrcb.hydp.modules.fxq.mapper.ChenKaoshiMapper">
+    
+    <resultMap type="ChenKaoshi" id="ChenKaoshiResult">
+        <result property="id"    column="id"    />
+        <result property="courseId"    column="course_id"    />
+        <result property="begainTime"    column="begain_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="testAddress"    column="test_address"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+
+
+    <select id="selectChenKaoshiList" parameterType="ChenKaoshi" resultType="com.hyrcb.hydp.modules.fxq.domain.ChenKaoshiDTO">
+        select u.*,b.course_name as courseName
+        from chen_kaoshi u left join chen_course b on u.course_id = b.id
+        where 1=1
+        <if test="courseId != null and courseId != ''">
+            AND u.course_id like concat('%', #{courseId}, '%')
+        </if>
+        <if test="status != null and status != ''">
+            AND u.status = #{status}
+        </if>
+    </select>
+</mapper>

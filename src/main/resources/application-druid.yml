@@ -42,7 +42,8 @@ spring:
                     username: ${DB_USERNAME:root}
                     password: ${DB_PASSWORD:123456}
                     #driver-class-name: com.mysql.jdbc.Driver
-                    url: jdbc:mysql://${DB_HOST:124.70.53.38}:${DB_PORT:3306}/${DB_NAME:application_mysql}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+                    #124.70.53.38 application_mysql
+                    url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:application}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
                     druid: # 以下参数针对每个库可以重新设置druid参数
                         validation-query: select 1
                 slave1:
@@ -58,11 +59,11 @@ spring:
     # redis 配置
     redis:
         # 地址
-        host: ${REDIS_HOST:124.70.53.38}
+        host: ${REDIS_HOST:127.0.0.1}
         # 端口，默认为6379
         port: ${REDIS_PORT:6379}
-        # 密码
-        password: ${REDIS_PASSWORD:13831812139@LZL}
+        # 密码13831812139@LZL
+        password: ${REDIS_PASSWORD:123456}
         # 连接超时时间
         timeout: 10s
         lettuce:
